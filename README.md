@@ -1,24 +1,5 @@
-# README
+# Eventpriv
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Invite friends to your private events!!
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Project from [Odin](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations)
