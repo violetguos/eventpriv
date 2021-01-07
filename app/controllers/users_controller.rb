@@ -35,6 +35,10 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+
+    session[:user_id] = @user.id
+    flash.notice = "User #{@user.username} successfully created! Thank you for signing up!"
+    # redirect_to user_path(@user)
   end
 
   # PATCH/PUT /users/1
