@@ -5,6 +5,7 @@ class User < ApplicationRecord
           :rememberable,
           :trackable,
           :validatable,
+          :registerable,
           :authentication_keys => [:username]
 
 

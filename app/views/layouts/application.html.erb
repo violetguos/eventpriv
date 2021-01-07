@@ -13,10 +13,14 @@
   </head>
 
   <body>
-     <%if notice%>
-        <%= notice %>
-      <%end%>
-  <%= yield%>
-  <%= %>
+
+    <%if notice%>
+      <%= notice %>
+    <%end%>
+    <%= render 'home/header'%>
+    <div class="container">
+      <%= yield%>
+    </div>
+  
   </body>
 </html>
