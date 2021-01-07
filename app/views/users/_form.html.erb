@@ -4,10 +4,23 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :username %>
+    <div class="field">
+      
+        <%= f.input :username, class:"input", type:"text", label:"Username"%>
+    </div>
   </div>
 
+  
+
   <div class="form-actions">
-    <%= f.button :submit %>
+    <div class="field is-grouped">
+      <div class="control">
+        <%= f.button :submit, class:"button is-link"%>
+      </div>
+    </div>
   </div>
-<% end %>
+<%end%>
+
+ 
+
+

@@ -8,4 +8,4 @@ Project from [Odin](https://www.theodinproject.com/courses/ruby-on-rails/lessons
 
 Run `rails generate scaffold_controller User` to add view and controller to existing models
 
-How to set up devise without email, [tutorial](http://alexvpopov.github.io/blog/2013/10/31/allow-users-to-authenticate-with-username-only-using-devise-activeadmin-rails-4-and-ruby-2/)
+How to set up login in vanilla rails without devise, [tutorial](https://imvishaltyagi444.wordpress.com/2018/01/19/authentication-without-devise-in-rails/)
