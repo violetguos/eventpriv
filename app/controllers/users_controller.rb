@@ -28,17 +28,16 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        session[:user_id] = @user.id
+
+        format.html { redirect_to '/', notice: "User was #{@user.username} successfully created." }
         format.json { render :show, status: :created, location: @user }
+
       else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        
+        redirect_to '/signup'
       end
     end
-
-    session[:user_id] = @user.id
-    flash.notice = "User #{@user.username} successfully created! Thank you for signing up!"
-    # redirect_to user_path(@user)
   end
 
   # PATCH/PUT /users/1
