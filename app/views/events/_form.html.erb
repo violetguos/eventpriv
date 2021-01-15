@@ -1,0 +1,25 @@
+<%= simple_form_for(@event) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <div class="field">
+      
+        <%= f.input :name, class:"input", type:"string", label:"event"%>
+        <%= f.input :location, class:"input", type:"text", label:"location"%>
+        <%= f.input :time, class:"input", type:"datetime", label:"event"%>
+        <%= f.input :description, class:"input", type:"text", label:"description"%>
+
+    </div>
+  </div>
+
+  
+
+  <div class="form-actions">
+    <div class="field is-grouped">
+      <div class="control">
+        <%= f.button :submit, class:"button is-link"%>
+      </div>
+    </div>
+  </div>
+<%end%>

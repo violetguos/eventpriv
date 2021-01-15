@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
-  helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in?, :lookup_user_by_id
 
   def authorize
     redirect_to '/login' unless current_user
@@ -14,5 +14,9 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     current_user != nil
+  end
+
+  def lookup_user_by_id(id)
+    User.find(id)
   end
 end
