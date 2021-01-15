@@ -4,7 +4,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    begin
+      User.find(session[:user_id])
+      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+
+    rescue => exception
+      flash[:notice] = "not logged in"
+      nil
+    end  
+    
   end
   helper_method :current_user, :logged_in?, :lookup_user_by_id
 
