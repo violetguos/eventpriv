@@ -14,3 +14,9 @@
  *= require_self
  */
 @import "bulma";
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

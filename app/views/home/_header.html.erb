@@ -13,9 +13,10 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item">Home</a>
+      <%=link_to "Home", root_path, class:"navbar-item"%>
+
       <%if current_user%>
-        <a class="navbar-item">@<%=current_user.username%></a>
+        <%=link_to "@#{current_user.username}", user_path(current_user), class:"navbar-item"%>
       <%end%>
     </div>
 
