@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      <%= event.name%>
+    </p>
+    <a href="#" class="card-header-icon" aria-label="more options">
+      <span class="icon">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </a>
+  </header>
+  <div class="card-content">
+    <div class="content" >
+      Location: <%=event.location%>
+      <br>
+      Description: <%=event.description%>
+      <br>
+      <strong>Attendees:</strong>
+      <% event.attendees.uniq.each do |attendee| %>
+        <li><%= attendee.username %></li>
+      <% end %>
+      <br>
+      <strong>Host:</strong>
+      <%= lookup_user_by_id(event.host_id).username %>
+      <br>
+      When: <time datetime="1-1-2016"><%=event.time%></time>
+    </div>
+  </div>
+  <footer class="card-footer">
+    <%= link_to 'Attend', attend_event_path, class:"card-footer-item" %>
+    <%= link_to 'Back', events_path,  class:"card-footer-item" %>
+    <%if current_user.id == event.host_id%>
+        <%= link_to 'Edit', events_path,  class:"card-footer-item" %>
+       <%= link_to 'Destroy', event,  method: :delete, data: { confirm: 'Are you sure?' },  class:"card-footer-item" %>
+    <%end%>
+  </footer>
+</div>

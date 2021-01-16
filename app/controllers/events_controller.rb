@@ -27,6 +27,18 @@ class EventsController < ApplicationController
     
   end
 
+  def update
+    respond_to do |format|
+      if @event.update(event_params)
+        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        format.json { render :show, status: :ok, location: @event }
+      else
+        format.html { render :edit }
+        format.json { render json: @event.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def attend
     if !@event.attendees.include?(current_user)
       @event.attendees << current_user
@@ -53,6 +65,6 @@ class EventsController < ApplicationController
     
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:name, :location, :time, :description, :host_id)
+      params.require(:event).permit(:name, :location, :time, :description, :host_id, :id)
     end
 end

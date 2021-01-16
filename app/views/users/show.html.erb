@@ -16,8 +16,9 @@
   <tbody>
     <% @user.events.each do |event| %>
       <tr>
-        <td><%= event.name %></td>
+        <td><%=link_to event.name, event %></td>
       </tr>
+      <%= render 'events/card', {event: event}%>
     <% end %>
   </tbody>
 </table>
