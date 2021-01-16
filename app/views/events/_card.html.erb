@@ -28,11 +28,11 @@
     </div>
   </div>
   <footer class="card-footer">
-    <%= link_to 'Attend', attend_event_path, class:"card-footer-item" %>
+    <%= link_to 'Attend', attend_event_path(event), class:"card-footer-item" %>
     <%= link_to 'Back', events_path,  class:"card-footer-item" %>
     <%if current_user.id == event.host_id%>
-        <%= link_to 'Edit', events_path,  class:"card-footer-item" %>
-       <%= link_to 'Destroy', event,  method: :delete, data: { confirm: 'Are you sure?' },  class:"card-footer-item" %>
+        <%= link_to 'Edit', edit_event_path(event),  class:"card-footer-item" %>
+        <%= link_to 'Destroy', event,  method: :delete, data: { confirm: 'Are you sure?' },  class:"card-footer-item" %>
     <%end%>
   </footer>
 </div>
