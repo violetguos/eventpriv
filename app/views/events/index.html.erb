@@ -1,5 +1,33 @@
-<%= @events.each do |event| %>
-  <%= render 'card', {event: event}%>
-  <br>
+<h1 class="title">Past events</h1>
+
+<%if @events.past.present?%>
+  <div class="tile is-ancestor">
+    <% @events.past.each do |event| %>
+      <div class="tile is-4">
+        <%= render 'card', {event: event}%>
+      </div>
+    <%end%>
+
+  </div>
+<%else%>
+  No past events
 <%end%>
-<%=link_to 'New Event', new_event_path%>
+
+
+<h1 class="title">Upcoming events</h1>
+
+<%if @events.upcoming.present?%>
+
+  <div class="tile is-ancestor">
+    <% @events.upcoming.each do |event| %>
+      <div class="tile is-4">
+        <%= render 'card', {event: event}%>
+      </div>
+    <%end%>
+
+  </div>
+<%else%>
+  No past events
+<%end%>
+
+<%=link_to 'New Event', new_event_path, class: "button is-primary"%>

@@ -15,8 +15,8 @@
  */
 @import "bulma";
 
-.icon {
+.tile {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: center !important;
+  flex-wrap: wrap;
 }

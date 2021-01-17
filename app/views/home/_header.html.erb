@@ -1,4 +1,4 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item">
       <strong>Eventpriv</strong>
@@ -22,15 +22,25 @@
 
     <div class="navbar-end">
       <div class="navbar-item">
-        
+        <div class="field is-grouped">
           <%if !current_user%>
-            <%=link_to 'Sign up', '/signup', class: "button is-primary"%>
-            <%= link_to 'Sign in', '/login', class: "button is-light"%>
-          <%else%>
-            <%= link_to 'Events', events_path, class: "button is-light"%>  
-            <%= link_to 'Sign out', '/logout', class: "button is-light" %>    
+            <p class="control">
+              <%=link_to 'Sign up', '/signup', class: "button is-primary"%>
+            </p>
+            <p class="control">
 
+              <%= link_to 'Sign in', '/login', class: "button is-light"%>
+            </p>
+          <%else%>
+            <p class="control">
+              <%= link_to 'Events', events_path, class: "button is-light"%>  
+            </p>
+            <p class="control">
+              <%= link_to 'Sign out', '/logout', class: "button is-light" %> 
+            </p>
+            
           <%end%>
+        </div>
       </div>
     </div>
   </div>

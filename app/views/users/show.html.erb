@@ -1,6 +1,13 @@
-<p id="notice"><%= notice %></p>
-<% @user.events.each do |event| %>
-  <%= render 'events/card', {event: event}%>
+<h1 class="title">hosted by <%=@user.username%></h1>
+
+<div class="tile is-ancestor">
+
+  <% @user.events.each do |event| %>
+    <div class="tile">
+
+      <%= render 'events/card', {event: event}%>
+    </div>
   <% end %>
-<br>
+  <br>
+</div>
 <%=link_to 'New Event', new_event_path, class: "button is-primary"%> 
