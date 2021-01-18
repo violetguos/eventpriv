@@ -13,7 +13,7 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <%=link_to "Home", root_path, class:"navbar-item"%>
+      <%=link_to "Home", events_path, class:"navbar-item"%>
 
       <%if current_user%>
         <%=link_to "@#{current_user.username}", user_path(current_user), class:"navbar-item"%>
@@ -32,9 +32,7 @@
               <%= link_to 'Sign in', '/login', class: "button is-light"%>
             </p>
           <%else%>
-            <p class="control">
-              <%= link_to 'Events', events_path, class: "button is-light"%>  
-            </p>
+            
             <p class="control">
               <%= link_to 'Sign out', '/logout', class: "button is-light" %> 
             </p>
